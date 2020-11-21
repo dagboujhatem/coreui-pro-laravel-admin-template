@@ -21,7 +21,7 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::get('/google-maps', function(){  return view('dashboard.googlemaps'); });
         Route::get('/404', function () {        return view('dashboard.404'); });
         Route::get('/500', function () {        return view('dashboard.500'); });
-        Route::prefix('base')->group(function () {  
+        Route::prefix('base')->group(function () {
             Route::get('/breadcrumb', function(){   return view('dashboard.base.breadcrumb'); });
             Route::get('/cards', function(){        return view('dashboard.base.cards'); });
             Route::get('/carousel', function(){     return view('dashboard.base.carousel'); });
@@ -40,20 +40,20 @@ Route::group(['middleware' => ['get.menu']], function () {
             Route::get('/tabs', function () {       return view('dashboard.base.tabs'); });
             Route::get('/tooltips', function () {   return view('dashboard.base.tooltips'); });
         });
-        Route::prefix('buttons')->group(function () {  
+        Route::prefix('buttons')->group(function () {
             Route::get('/buttons', function(){          return view('dashboard.buttons.buttons'); });
             Route::get('/button-group', function(){     return view('dashboard.buttons.button-group'); });
             Route::get('/dropdowns', function(){        return view('dashboard.buttons.dropdowns'); });
             Route::get('/brand-buttons', function(){    return view('dashboard.buttons.brand-buttons'); });
             Route::get('/loading-buttons', function(){  return view('dashboard.buttons.loading-buttons'); });
         });
-        Route::prefix('editors')->group(function () {  
+        Route::prefix('editors')->group(function () {
             Route::get('/code-editor', function(){          return view('dashboard.editors.code-editor'); });
             Route::get('/markdown-editor', function(){      return view('dashboard.editors.markdown-editor'); });
             Route::get('/text-editor', function(){          return view('dashboard.editors.text-editor'); });
         });
 
-        Route::prefix('forms')->group(function () {  
+        Route::prefix('forms')->group(function () {
             Route::get('/basic-forms', function(){          return view('dashboard.forms.basic-forms'); });
             Route::get('/advanced-forms', function(){       return view('dashboard.forms.advanced-forms'); });
             Route::get('/validation', function(){           return view('dashboard.forms.validation'); });
@@ -64,24 +64,24 @@ Route::group(['middleware' => ['get.menu']], function () {
             Route::get('/flags', function(){                return view('dashboard.icons.flags'); });
             Route::get('/brands', function(){               return view('dashboard.icons.brands'); });
         });
-        Route::prefix('notifications')->group(function () {  
+        Route::prefix('notifications')->group(function () {
             Route::get('/alerts', function(){               return view('dashboard.notifications.alerts'); });
             Route::get('/badge', function(){                return view('dashboard.notifications.badge'); });
             Route::get('/modals', function(){               return view('dashboard.notifications.modals'); });
             Route::get('/toastr', function(){               return view('dashboard.notifications.toastr'); });
         });
-        Route::prefix('plugins')->group(function () {  
+        Route::prefix('plugins')->group(function () {
             Route::get('/calendar', function(){             return view('dashboard.plugins.calendar'); });
             Route::get('/draggable-cards', function(){      return view('dashboard.plugins.draggable-cards'); });
             Route::get('/spinners', function(){             return view('dashboard.plugins.spinners'); });
         });
-        Route::prefix('tables')->group(function () { 
+        Route::prefix('tables')->group(function () {
             Route::get('/tables', function () {             return view('dashboard.tables.tables'); });
             Route::get('/datatables', function () {         return view('dashboard.tables.datatables'); });
         });
 
-        Route::prefix('apps')->group(function () { 
-            Route::prefix('invoicing')->group(function () { 
+        Route::prefix('apps')->group(function () {
+            Route::prefix('invoicing')->group(function () {
                 Route::get('/invoice', function () {        return view('dashboard.apps.invoicing.invoice'); });
             });
             Route::prefix('email')->group(function () {
@@ -117,7 +117,7 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::resource('roles',        'RolesController');
         Route::get('/roles/move/move-up',      'RolesController@moveUp')->name('roles.up');
         Route::get('/roles/move/move-down',    'RolesController@moveDown')->name('roles.down');
-        Route::prefix('menu/element')->group(function () { 
+        Route::prefix('menu/element')->group(function () {
             Route::get('/',             'MenuElementController@index')->name('menu.index');
             Route::get('/move-up',      'MenuElementController@moveUp')->name('menu.up');
             Route::get('/move-down',    'MenuElementController@moveDown')->name('menu.down');
@@ -129,7 +129,7 @@ Route::group(['middleware' => ['get.menu']], function () {
             Route::get('/show',         'MenuElementController@show')->name('menu.show');
             Route::get('/delete',       'MenuElementController@delete')->name('menu.delete');
         });
-        Route::prefix('menu/menu')->group(function () { 
+        Route::prefix('menu/menu')->group(function () {
             Route::get('/',         'MenuController@index')->name('menu.menu.index');
             Route::get('/create',   'MenuController@create')->name('menu.menu.create');
             Route::post('/store',   'MenuController@store')->name('menu.menu.store');
@@ -158,3 +158,7 @@ Route::group(['middleware' => ['get.menu']], function () {
 });
 
 Route::get('locale', 'LocaleController@locale');
+
+
+Route::get('beneficiary', 'TestController@show');
+Route::post('beneficiary', 'TestController@submit');

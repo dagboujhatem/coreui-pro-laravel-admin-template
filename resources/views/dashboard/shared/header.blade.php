@@ -1,5 +1,5 @@
 
-      
+
     <div class="c-wrapper">
       <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
         <button class="c-header-toggler c-class-toggler d-lg-none mr-auto" type="button" data-target="#sidebar" data-class="c-sidebar-show"><span class="c-header-toggler-icon"></span></button>
@@ -15,18 +15,12 @@
             if(isset($appMenus['top menu'])){
                 FreelyPositionedMenus::render( $appMenus['top menu'] , 'c-header-', 'd-md-down-none');
             }
-        ?>       
+        ?>
         <ul class="c-header-nav ml-auto">
           <li class="c-header-nav-item">
               <form id="select-locale-form" action="/locale" method="GET">
                 <select name="locale" id="select-locale" class="form-control">
-                    @foreach($locales as $locale)
-                        @if($locale->short_name == $appLocale)
-                            <option value="{{ $locale->short_name }}" selected>{{ $locale->name }}</option>
-                        @else
-                            <option value="{{ $locale->short_name }}">{{ $locale->name }}</option>
-                        @endif
-                    @endforeach
+
                 </select>
               </form>
           </li>

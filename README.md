@@ -52,6 +52,14 @@ CoreUI is built on top of Bootstrap 4 and supports popular frameworks.
 | --- | --- | --- | --- | --- |
 | [![CoreUI Pro Admin Template](https://coreui.io/assets/img/example-coureui.jpg)](https://coreui.io/pro/) | [![Prime Admin Template](https://coreui.io/assets/img/responsive-prime.png)](https://coreui.io/admin-templates/bootstrap/prime/?support=1) | [![Root Admin Template](https://coreui.io/assets/img/responsive-root.png)](https://coreui.io/admin-templates/bootstrap/root/?support=1) | [![Alba Admin Template](https://coreui.io/assets/img/responsive-alba.png)](https://coreui.io/admin-templates/bootstrap/alba/?support=1) | [![Leaf Admin Template](https://coreui.io/assets/img/responsive-leaf.png)](https://coreui.io/admin-templates/bootstrap/leaf/?support=1)
 
+## Basic Command
+php artisan make:controller TestController
+php artisan make:model Beneficiary --migration
+
+
+
+
+
 ## Installation
 
 ``` bash
